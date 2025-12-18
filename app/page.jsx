@@ -16,6 +16,10 @@ const NorthpointSportsBar = () => {
     window.open(`https://wa.me/254715555503?text=${encodeURIComponent(message)}`, '_blank');
   };
 
+  const openMap = () => {
+    window.open('https://maps.app.goo.gl/Lei6E7x3UmGKAm7z7', '_blank');
+  };
+
   const menuItems = {
     drinks: [
       { name: "Tusker Lager", price: "KSh 300", desc: "Ice cold local favorite" },
@@ -256,9 +260,9 @@ const NorthpointSportsBar = () => {
               <Phone className="text-orange-500" />
               <span>0715555503</span>
             </div>
-            <div className="flex items-center justify-center space-x-3">
+            <div className="flex items-center justify-center space-x-3 cursor-pointer hover:text-orange-500 transition-colors" onClick={openMap}>
               <MapPin className="text-orange-500" />
-              <span>Near Langata High School</span>
+              <a href="https://maps.app.goo.gl/Lei6E7x3UmGKAm7z7" target="_blank" rel="noopener noreferrer" className="underline hover:text-orange-500">View Location</a>
             </div>
             <div className="flex items-center justify-center space-x-3">
               <Clock className="text-orange-500" />
@@ -320,38 +324,7 @@ const NorthpointSportsBar = () => {
         </motion.div>
       </section>
 
-      {/* Map Section */}
-      <section className="py-20 bg-gray-900 px-6">
-        <div className="max-w-6xl mx-auto">
-          <motion.h2 
-            className="text-4xl font-bold mb-12 text-center"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            Find Us
-          </motion.h2>
-          <motion.div 
-            className="bg-gray-800 rounded-lg overflow-hidden h-96"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.437242748!2d36.72191!3d-1.35210!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1a6bf7445dc1%3A0x940b62a3c8efde08!2sLangata%20High%20School!5e0!3m2!1sen!2ske!4v1640000000000"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Northpoint Sports Bar - Near Langata High School"
-            />
-          </motion.div>
-        </div>
-      </section>
+
 
       {/* Footer */}
       <footer className="py-12 bg-black border-t border-gray-800">
@@ -374,7 +347,7 @@ const NorthpointSportsBar = () => {
               <div className="space-y-2 text-gray-400">
                 <p>0715555503</p>
                 <p>northpointsportbar@gmail.com</p>
-                <p>Near Langata High School</p>
+                <a href="https://maps.app.goo.gl/Lei6E7x3UmGKAm7z7" target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:text-orange-500 underline">View Location</a>
                 <p>24/7</p>
               </div>
             </div>
